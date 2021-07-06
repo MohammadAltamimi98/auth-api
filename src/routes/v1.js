@@ -63,5 +63,4 @@ async function handleDelete(req, res) {
   res.status(200).json(deletedRecord);
 }
 
-
 module.exports = router;

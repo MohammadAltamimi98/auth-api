@@ -7,8 +7,8 @@ const jwt = require('jsonwebtoken');
 const users = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  role: { type: String, required: true, default: 'user', enum: ['user', 'editor', 'admin'] },
-});
+  role: { type: String, required: true, default: 'user', enum: ['user', 'editor', 'admin', 'writer'] },
+}, { toJSON: {virtuals: true} } );
 // }, { toObject: { getters: true } }); // What would this do if we use this instead of just });
 
 // Adds a virtual field to the schema. We can see it, but it never persists
@@ -22,6 +22,7 @@ users.virtual('token').get(function () {
 
 users.virtual('capabilities').get(function () {
   let acl = {
+    writer: ['read', 'create'],
     user: ['read'],
     editor: ['read', 'create', 'update'],
     admin: ['read', 'create', 'update', 'delete']
