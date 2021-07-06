@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-<!-- ✨ [Deployed Heroku Site](https://lydia-auth-api.herokuapp.com/) -->
+✨ [Deployed Heroku Site](https://auth-api-mohammad.herokuapp.com/)
 
 ✨ [GitHub Actions](https://github.com/MohammadAltamimi98/auth-api/actions)
 
