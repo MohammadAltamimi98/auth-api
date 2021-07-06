@@ -8,9 +8,9 @@
 
 <!-- ✨ [Deployed Heroku Site](https://lydia-auth-api.herokuapp.com/) -->
 
-✨ [GitHub Actions](https://github.com/LydiaMT/auth-api/actions)
+✨ [GitHub Actions](https://github.com/MohammadAltamimi98/auth-api/actions)
 
-✨ [Pull Request](https://github.com/LydiaMT/auth-api/pull/1)
+✨ [Pull Request](https://github.com/MohammadAltamimi98/auth-api/pull/1)
 <br/>
 <br/>
 
