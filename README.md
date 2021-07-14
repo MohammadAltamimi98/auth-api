@@ -6,11 +6,11 @@
 
 ### Links and Resources
 
-✨ [Deployed Heroku Site]()
+✨ [Deployed Heroku Site](https://auth-api-mohammad.herokuapp.com/)
 
-✨ [GitHub Actions]()
+✨ [GitHub Actions](https://github.com/MohammadAltamimi98/auth-api/actions)
 
-✨ [Pull Request]()
+✨ [Pull Request](https://github.com/MohammadAltamimi98/auth-api/pull/2)
 <br/>
 <br/>
 
@@ -25,11 +25,12 @@
 
 ### Use
 
-- You can create a new account via the /signup route, then sign into the route with the /signin route. Use [swagger.io](https://inspector.swagger.io/builder). 
+- You can create a new account via the /signup route, then sign into the route with the /signin route.
 
 ```JS
 { "username": "TEST", "password": "TEST" }
 ```
+
 <br/>
 <br/>
 
@@ -41,6 +42,6 @@ In the command line at the root directory, `run npm test` to make sure all test 
 
 ### UML / WRRC
 
-<img src="UML_lab08.jpg" width ="800">
+<img src="lab08.png" width ="800">
 
-<img src="wrrcLab07.jpg" width ="800">
+<img src="" width ="800">
