@@ -30,40 +30,78 @@ router.param('model', (req, res, next) => {
   }
 });
 
-router.get('/:model', basicAuth, can('read'), handleGetAll);
-router.get('/:model/:id', basicAuth, can('read'), handleGetOne);
-router.post('/:model', bearerAuth, can('read', 'update', 'create'), handleCreate);
-router.put('/:model/:id', bearerAuth, can('read', 'update', 'create'), handleUpdate);
-router.delete('/:model/:id', bearerAuth, can('read', 'update', 'create', 'delete'), handleDelete);
+
+router.get('/:model', bearerAuth, handleGetAll);
+router.get('/:model/:id', bearerAuth, handleGetOne);
+router.post('/:model', bearerAuth, can('create'), handleCreate);
+router.put('/:model/:id', bearerAuth, can('update'), handleUpdate);
+router.delete('/:model/:id', bearerAuth, can('delete'), handleDelete);
+
+// router.get('/:model', basicAuth, can('read'), handleGetAll);
+// router.get('/:model/:id', basicAuth, can('read'), handleGetOne);
+// router.post('/:model', bearerAuth, can('create'), handleCreate);
+// router.put('/:model/:id', bearerAuth, can('update'), handleUpdate);
+// router.delete('/:model/:id', bearerAuth, can('delete'), handleDelete);
 
 async function handleGetAll(req, res) {
-  let allRecords = await req.model.get();
-  res.status(200).json(allRecords);
-}
+  try {
+    let allRecords = await req.model.get();
+    res.status(200).json(allRecords);
+  } catch (error) {
+    throw new Error(error.message);
+  }
+
+};
 
 async function handleGetOne(req, res) {
-  const id = req.params.id;
-  let theRecord = await req.model.get(id)
-  res.status(200).json(theRecord);
-}
+  try {
+    const id = req.params.id;
+    let theRecord = await req.model.get(id)
+    res.status(200).json(theRecord);
+  } catch (error) {
+    throw new Error(error.message)
+  }
+
+};
 
 async function handleCreate(req, res) {
-  let obj = req.body;
-  let newRecord = await req.model.create(obj);
-  res.status(201).json(newRecord);
-}
+  try {
+    let obj = req.body;
+    let newRecord = await req.model.create(obj);
+    res.status(201).json(newRecord);
+  } catch (error) {
+    throw new Error(error.message)
+  }
+
+};
+
+
+
 
 async function handleUpdate(req, res) {
-  const id = req.params.id;
-  const obj = req.body;
-  let updatedRecord = await req.model.update(id, obj)
-  res.status(200).json(updatedRecord);
-}
+  try {
+    const id = req.params.id;
+    const obj = req.body;
+    let updatedRecord = await req.model.update(id, obj)
+    res.status(200).json(updatedRecord);
+
+  } catch (error) {
+    throw new Error(error.message)
+  }
+};
+
 
 async function handleDelete(req, res) {
-  let id = req.params.id;
-  let deletedRecord = await req.model.delete(id);
-  res.status(200).json(deletedRecord);
+  try {
+    let id = req.params.id;
+    let deletedRecord = await req.model.delete(id);
+    res.status(200).json();
+  }
+  catch (error) {
+
+    throw new Error(error.message)
+  }
 }
+
 
 module.exports = router;
