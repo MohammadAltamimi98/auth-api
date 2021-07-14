@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-✨ [Deployed Heroku Site](https://auth-api-mohammad.herokuapp.com/)
+✨ [Deployed Heroku Site](https://auth-api-m.herokuapp.com/)
 
 ✨ [GitHub Actions](https://github.com/MohammadAltamimi98/auth-api/actions)
 
