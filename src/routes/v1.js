@@ -58,9 +58,13 @@ async function handleUpdate(req, res) {
 }
 
 async function handleDelete(req, res) {
-  let id = req.params.id;
-  let deletedRecord = await req.model.delete(id);
-  res.status(200).json(deletedRecord);
+  try {
+    let id = req.params.id;
+    let deletedRecord = await req.model.delete(id);
+    res.status(200).json();
+  } catch (error) {
+    throw new Error(error.message)
+  }
 }
 
 module.exports = router;
