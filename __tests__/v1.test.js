@@ -5,16 +5,16 @@ const bcrypt = require('bcrypt');
 require('dotenv').config();
 describe('unauthenticated routes', () => {
   let id;
-  test('post method', async () => {
+  test('post method test', async () => {
     const response = await request.post('/api/v1/food').send({
-      name: "tomato",
-      calories: 1500,
+      name: "eggplant",
+      calories: 1700,
       type: "fruit"
     });
     id = response.body._id;
     expect(response.status).toBe(201);
     expect(response.body.name).toBeDefined();
-    expect(response.body.name).toBe("tomato");
+    expect(response.body.name).toBe("eggplant");
     expect(response.body.type).toEqual("FRUIT");
 
   })
@@ -22,7 +22,7 @@ describe('unauthenticated routes', () => {
     const response = await request.get('/api/v1/food');
     expect(response.status).toBe(200);
     expect(response.body[0].name).toBeDefined();
-    expect(response.body[0].name).toBe("tomato");
+    expect(response.body[0].name).toBe("eggplant");
     expect(response.body[0].type).toEqual("FRUIT");
 
   })
@@ -30,7 +30,7 @@ describe('unauthenticated routes', () => {
     const response = await request.get(`/api/v1/food/${id}`)
     expect(response.status).toBe(200);
     expect(response.body._id).toBe(id);
-    expect(response.body.name).toBe("tomato");
+    expect(response.body.name).toBe("eggplant");
     expect(response.body.type).toEqual("FRUIT");
 
   })

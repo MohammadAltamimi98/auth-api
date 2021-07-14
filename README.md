@@ -6,11 +6,11 @@
 
 ### Links and Resources
 
-<!-- ✨ [Deployed Heroku Site](https://lydia-auth-api.herokuapp.com/) -->
+✨ [Deployed Heroku Site]()
 
-✨ [GitHub Actions](https://github.com/LydiaMT/auth-api/actions)
+✨ [GitHub Actions]()
 
-✨ [Pull Request](https://github.com/LydiaMT/auth-api/pull/1)
+✨ [Pull Request]()
 <br/>
 <br/>
 
